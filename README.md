@@ -97,10 +97,10 @@ To use this server with the [Cline VSCode plugin](http://cline.bot):
       "uvicorn",
       "fastmcp",
       "run",
-      "/path/to/repo/sqlite_explorer.py"
+      "E:/github/sqlite-explorer-fastmcp-mcp-server/sqlite_explorer.py"
     ],
     "env": {
-      "SQLITE_DB_PATH": "/path/to/your/database.db"
+      "SQLITE_DB_PATH": "c:/users/user/my.db"
     }
   }
 }
@@ -131,3 +131,17 @@ This documentation serves as context when developing features and can be used wi
 The following environment variables must be set:
 
 - `SQLITE_DB_PATH`: Full path to the SQLite database file you want to explore
+
+## uv test mcp
+```
+# On macOS and Linux.
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# On Windows.
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# With pip.
+pip install uv
+
+uv run --with fastmcp --with uvicorn fastmcp run E:/github/sqlite-explorer-fastmcp-mcp-server/sqlite_explorer.py
+```
